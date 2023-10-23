@@ -1,6 +1,3 @@
-'''
-練習プログラム
-'''
 from email.mime import application
 import bottle
 import routes
