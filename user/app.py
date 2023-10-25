@@ -6,6 +6,7 @@ import bottle
 import routes
 import routes_list
 import routes_login
+import routes_form
 from utils.session import Session
 
 app = routes.app

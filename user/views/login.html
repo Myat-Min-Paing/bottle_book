@@ -8,9 +8,9 @@
 <form action="login" method="POST">
     <div class="container">
         <div class="row">
-            <div-class= "col-md-6"> 
+            <div class="col-md-6"> 
                 {% if error %}
-                    <p class="error_message"›{ferror)}</p>
+                    <p class="error_message">{{error}}</p>
                 {% endif %}
                 <div class="form-group"> 
                     <label>ユーザーID</labels>
@@ -18,11 +18,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label›パスワード</label>
+                    <label>パスワード</label>
                     <input class="form-control" type="password" name="passwd" value=""/>
                 </div>
-                <div-class="form-group">
-                    <input id="submit" type="submit" class="btn-btn-primary" value" "/>
+                <div class="form-group">
+                    <input id="submit" type="submit" class="btn btn-primary" value="ログイン"/>
                 </div>
             </div>
         </div>

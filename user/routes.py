@@ -1,14 +1,18 @@
-from email.mime import application
-import bottle
-import routes
-import routes_list
-import routes_login
+from bottle import Bottle, \
+    jinja2_template as template, \
+        static_file, request, redirect
+from bottle import response
 from utils.session import Session
 
-app = routes.app
-app_sess = routes.app_sess
+app = Bottle()
+sess = Session()
+app_sess = sess.create_session(app)
 
-if __name__ == '__main__':
-    bottle.run(app=app_sess, host= '0.0.0.0', port=8888, reloader=True, debug=True)
-else:
-    application = app_sess
+@app.get('/static/<filePath:path>')
+def static(filePath):
+    return static_file(filePath, root='./static')
+
+@app.route('/test')
+def test():
+    aaa = request.query.test
+    return aaa
