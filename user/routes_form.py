@@ -36,6 +36,7 @@ def add():
         if request.forms.getunicode('id') != '' and request.forms.getunicode('id') != '#':
             registId = request.forms.getunicode('id')
             form['id'] = request.forms.getunicode('id')
+            kind = "更新"
         else:
             registId = ''
             form['id'] = '#'
@@ -51,7 +52,7 @@ def add():
                 
         if errorMsg == []:
             headers = ["id", "書名", "巻数", "著者", "出版社", "メモ"]
-            return template('confirm.html', form=form, headers=headers,registId=registId)
+            return template('confirm.html', form=form, headers=headers,registId=registId, kind=kind)
         else:
             return template('add.html', error=errorMsg, kind=kind, form=form, registId=registId)
             
